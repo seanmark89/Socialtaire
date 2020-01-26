@@ -46,12 +46,12 @@ public class Pile extends Card{
             ptr = trl.getNext();
 
         while(ptr != null) {
-            if (ptr.getData().getCardNum() == card1.getCardNum() && ptr.getData().getSuitNum() == card1.getSuitNum()) {
-                temp = ptr;
-                while(ptr != null) {
-                    if (ptr.getData().getCardNum() == card2.getCardNum() && ptr.getData().getSuitNum() == card2.getSuitNum()) {
-                        trl.setNext(ptr.getNext());
-                        return temp;
+            if (ptr.getData().getCardNum() == card1.getCardNum() && ptr.getData().getSuitNum() == card1.getSuitNum()) { //finds first card, Node trl does not move after this
+                temp = ptr; 
+                while(ptr != null) { //iterates through rest of pile to find second card
+                    if (ptr.getData().getCardNum() == card2.getCardNum() && ptr.getData().getSuitNum() == card2.getSuitNum()) { 
+                        trl.setNext(ptr.getNext()); //setting links to remove cards from pile
+                        return temp; //function ends
                     }
                     ptr = ptr.getNext();
                 }
