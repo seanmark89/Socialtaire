@@ -5,7 +5,9 @@ public class Card{
     private int suit;
 
     public Card() {
-        this.num = -1;
+        //initializing num and suit to -1, for future error checking and not initializing multiple cards 
+        //of the same suit. If default constructor is used, suit and num will be changed later on
+        this.num = -1; 
         this.suit = -1;
     }
 
@@ -24,7 +26,7 @@ public class Card{
             this.suit = suit;
         }
 
-    }//method Card
+    }//constructor
 
     public int getCardNum() {
 
