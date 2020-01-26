@@ -1,3 +1,4 @@
+
 public class Card{
     private String[] nums = new String[] {"Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
     private String[] suits = new String[] {"Spades", "Hearts", "Clubs", "Diamonds"};
@@ -5,9 +6,9 @@ public class Card{
     private int suit;
 
     public Card() {
-        //initializing num and suit to -1, for future error checking and not initializing multiple cards 
+        //initializing num and suit to -1, for future error checking and not initializing multiple cards
         //of the same suit. If default constructor is used, suit and num will be changed later on
-        this.num = -1; 
+        this.num = -1;
         this.suit = -1;
     }
 
@@ -28,7 +29,7 @@ public class Card{
 
     }//constructor
 
-    public int getCardNum() {
+    public int getNum() {
 
         return this.num;
 
@@ -40,7 +41,7 @@ public class Card{
 
     }//getter for Card Number Name
 
-    public int getSuitNum() {
+    public int getSuit() {
 
         return this.suit;
 
