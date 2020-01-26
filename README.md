@@ -1,3 +1,3 @@
 #README 
 
-#Socialtare, MinneHack 2020 Project
+#Socialtaire, MinneHack 2020 Project
