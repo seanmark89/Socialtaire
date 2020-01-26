@@ -6,6 +6,7 @@ public class Card{
     private int num;
     private int suit;
     private Node next;
+    private Node card;
 
     public Card(int num, int suit) {
 
@@ -18,34 +19,36 @@ public class Card{
         }
 
         else {
-            this.num = num;
-            this.suit = suit;
-            this.next = null;
+            this.card = new Node(num, suit, null);
         }
 
     }//method Card
 
+    public Node getNextNode() {
+        return this.card.next;
+    }
+
     public int getCardNum() {
 
-        return this.num;
+        return this.card.num;
 
     }//getter for Card Num
 
     public String getNumName() {
 
-        return nums[this.num - 1];
+        return nums[this.card.num - 1];
 
     }//getter for Card Number Name
 
     public int getSuitNum() {
 
-        return this.suit;
+        return this.card.suit;
 
     }//getter Suit Num
 
     public String getSuitName() {
 
-        return suits[this.suit - 1];
+        return suits[this.card.suit - 1];
 
     }//getter for Suit Name
 
@@ -55,7 +58,7 @@ public class Card{
             throw new IllegalArgumentException("Suit must be between 1-4");
         }
         else {
-            this.suit = suit;
+            this.card.suit = suit;
         }
 
     }//setter for Suit
@@ -65,18 +68,20 @@ public class Card{
             throw new IllegalArgumentException("Rank must be 1 - 13");
         }
         else {
-            this.num = num;
+            this.card.num = num;
         }
     }
 
     private class Node {
-        private Card card;
         private Node next;
+        private int num;
+        private int suit;
 
-        private Node(Card card, Node next) {
-            this.card = card;
+        private Node(int num, int suit, Node next) {
+            this.num = num;
+            this.suit = suit;
             this.next = next;
-        }//constructor
-    }//class Node
+        }
+    }
 
 }//class Card
