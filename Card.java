@@ -5,6 +5,7 @@ public class Card{
     private String[] suits = new String[] {"Spades", "Hearts", "Clubs", "Diamonds"};
     private int num;
     private int suit;
+    private Node next;
 
     public Card(int num, int suit) {
 
@@ -19,6 +20,7 @@ public class Card{
         else {
             this.num = num;
             this.suit = suit;
+            this.next = null;
         }
 
     }//method Card
@@ -46,18 +48,18 @@ public class Card{
         return suits[this.suit - 1];
 
     }//getter for Suit Name
-    
+
     public void setSuit(int suit) {
-        
+
         if (suit < 1 || suit > 4){
             throw new IllegalArgumentException("Suit must be between 1-4");
         }
         else {
             this.suit = suit;
         }
-        
+
     }//setter for Suit
-    
+
     public void setNum(int num) {
         if (num < 1 || num > 13) {
             throw new IllegalArgumentException("Rank must be 1 - 13");
@@ -66,5 +68,15 @@ public class Card{
             this.num = num;
         }
     }
+
+    private class Node {
+        private Card card;
+        private Node next;
+
+        private Node(Card card, Node next) {
+            this.card = card;
+            this.next = next;
+        }//constructor
+    }//class Node
 
 }//class Card
